@@ -12,9 +12,21 @@ let renderTodoApp = function() {
   // Your Code Here
   let theApp = document.getElementById("app");
   let h3Element1 = document.createElement("h3");
+  let ulElement = document.createElement("ul");
 
   h3Element1.innerText = "TodoList";
   theApp.append(h3Element1);
+
+  for (let index = 0; index < todos.length; index +=1) {
+    let liElement = document.createElement("li");
+    let currentTask = todos[index];
+
+    liElement.innerText = currentTask;
+    liElement.className = "list-item";
+    ulElement.append(liElement);
+  }
+
+  theApp.append(ulElement);
 }
 
 renderTodoApp();
